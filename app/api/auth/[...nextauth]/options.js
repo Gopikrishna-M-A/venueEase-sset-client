@@ -31,7 +31,6 @@ export const options = {
                 body: JSON.stringify(newUser),
               });
               const data = await response.json();
-              console.log("user",data);
               return true;
         },
         async session({ session }) {
