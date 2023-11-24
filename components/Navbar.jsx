@@ -6,8 +6,9 @@ import { options } from '../app/api/auth/[...nextauth]/options'
 import { getServerSession } from 'next-auth/next';
 
 const Navbar = async() => {
-  const session = await getServerSession(options)
-  const admin = session.user.admin
+  const session = await getServerSession(options)  
+  const admin = session ? session.user.admin : false;
+
   return (
     <div className='navbar page'>
 
