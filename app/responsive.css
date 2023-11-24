@@ -1,0 +1,26 @@
+@media (width<500px){
+    .page{
+        padding: 30px 10px; 
+      }
+      .nav-links-wrapper{
+        display: none;
+      }
+      .venue-page.Row{
+        flex-direction: column;
+      }
+      .venue-left-section{
+        width: 100%;
+      }
+      .venue-right-section{
+        width: 100%;
+      }
+      .Pending{
+        width: 100%;
+      }
+      .Accepted{
+        width: 100%;
+      }
+      .Rejected{
+        width: 100%;
+      }
+}
