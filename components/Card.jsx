@@ -1,5 +1,5 @@
 import React from "react";
-import { Typography, Button, Carousel } from "antd";
+import { Typography, Button, Carousel, Tag } from "antd";
 
 const { Text, Title } = Typography;
 
@@ -13,7 +13,7 @@ const contentStyle = {
   borderRadius: "4px",
 };
 
-const Card = ({title,location}) => {
+const Card = ({ venue }) => {
   const onChange = (currentSlide) => {
     console.log(currentSlide);
   };
@@ -38,11 +38,20 @@ const Card = ({title,location}) => {
       </div>
       <div className="card-desc">
         <Title className="card-title" level={4}>
-         {title}
+          {venue.venueName}
         </Title>
-        <Text className="card-location" type="secondary">
-          {location}
+        <Text className="card-location" >
+          {venue.location}
         </Text>
+        <br />
+        <Text className="card-venue-desc" type="secondary">
+          {venue.venueDescription}
+        </Text>
+        <div className="cart-tag-wrapper">
+          {venue.amenities.map((amenity) => (
+            <Tag bordered={false}>{amenity}</Tag>
+          ))}
+        </div>
       </div>
 
       <Button type="primary">Reserve Now</Button>

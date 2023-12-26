@@ -60,7 +60,7 @@ const ReservationsTable = ({ baseURL, user }) => {
     const endTime = formatDate(reservation.reservationDate[1]);
     return {
       key: reservation._id, // Use a unique key, like the reservation ID
-      name: reservation.venueId.venueName,
+      name: reservation.eventName,
       timing: `${startTime} - ${endTime}`,
       description: reservation.eventDesc,
       status: reservation.status.toLowerCase(), // Ensure it's in lowercase
@@ -127,6 +127,7 @@ const ReservationsTable = ({ baseURL, user }) => {
   ];
   return (
     <Table columns={columns} dataSource={data} />
+
   )
 }
 

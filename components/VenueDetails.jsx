@@ -118,7 +118,7 @@ const VenueDetails = ({ baseURL, user }) => {
           <Title className="card-title" level={4}>
             {venue.venueName}
           </Title>
-          <Text className="card-location" type="secondary">
+          <Text className="card-location" >
             {venue.location}
           </Text>
           <Text className="card-location" type="secondary">

@@ -1,10 +1,11 @@
 'use client'
 import React, { useState, useEffect } from 'react';
-import Card from "../components/Card";
+import Card from "./Card";
 import Link from "next/link";
 import axios from "axios";
+import { InputNumber } from "antd";
 
-const HomePage = ({ baseURL }) => {
+const VenueListing = ({ baseURL }) => {
     const [venues, setVenues] = useState([]);
 
     useEffect(() => {
@@ -18,13 +19,17 @@ const HomePage = ({ baseURL }) => {
     }, []);
   return (
     <>
+      <div className='venue-filters'>
+        Capacity : &nbsp;
+        <InputNumber min={1} max={100} placeholder='Capacity' />
+      </div>
       {venues.map((venue) => (
         <Link key={venue._id} href={`/venue/?id=${venue._id}`}>
-          <Card title={venue.venueName} location={venue.location} />
+          <Card venue={venue} />
         </Link>
       ))}
     </>
   );
 };
 
-export default HomePage;
+export default VenueListing;

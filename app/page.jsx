@@ -1,12 +1,12 @@
-import HomePage from "../components/HomePage";
+import Home from "../components/Home";
 const baseURL = process.env.BASE_URL
 
 const index = () => {
 
 
   return (
-    <div className="page Row gap-20 JC-C">
-      <HomePage baseURL={baseURL} />
+    <div className="page">
+      <Home baseURL={baseURL} />
     </div>
   );
 };
